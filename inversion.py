@@ -1,6 +1,7 @@
 """
 Implement the actual inversion.
 """
+import numpy as np
 import beta_implementations as betas
 
 #Notes to myself: actual inputs to the conversion are an array of normalizations and slopes of the relevant scaling laws (pis and alphas) as well as a covariance matrix describing their relation, as well as pivot values for everything.
@@ -26,6 +27,9 @@ class Inversion(object):
         self.alphas = alphas
         self.cov = cov
 
+    def invert(self, inputs, pivots, alphas, cov):
+        
+        return 0
 
 if __name__ == "__main__":
     inv = Inversion()
@@ -36,3 +40,10 @@ if __name__ == "__main__":
         inv.select_beta_function(3)
     except Exception:
         print "Beta function selection exception correctly raised."
+    ins = np.vstack((np.arange(10), np.arange(10)+1))
+    print ins
+    print ins.shape, ins.size
+    in1 = np.arange(10)
+    in2 = np.atleast_2d(in1)
+    print in1.shape, len(in1)
+    print in2.shape, len(in2)
